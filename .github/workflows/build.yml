@@ -39,7 +39,7 @@ jobs:
         uses: smashedr/docker-tags-action@master
         with:
           images: "${{ env.REGISTRY }}/${{ github.repository }}"
-          extra: ${{ inputs.tags }}
+          tags: ${{ inputs.tags }}
 
       - name: "Build and Push"
         uses: docker/build-push-action@v4
