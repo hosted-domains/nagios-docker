@@ -3,7 +3,7 @@
 set -e
 
 REGISTRY_HOST="ghcr.io"
-REGISTRY_USER="raluaces"
+REGISTRY_USER="hosted-domains"
 REGISTRY_REPO="nagios-docker"
 
 if [ -f ".env" ];then
@@ -32,6 +32,6 @@ docker login "${REGISTRY_HOST}"
 
 docker buildx create --use
 docker buildx build --platform linux/amd64,linux/arm64 --push \
-    -t "${REGISTRY_HOST}/${REGISTRY_USER}/${REGISTRY_REPO}:${VERSION}" nginx
+    -t "${REGISTRY_HOST}/${REGISTRY_USER}/${REGISTRY_REPO}:${VERSION}" nagios
 
 #docker push "${REGISTRY_HOST}/${REGISTRY_USER}/${REGISTRY_REPO}:${VERSION}"

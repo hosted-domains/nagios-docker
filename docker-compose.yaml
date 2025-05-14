@@ -1,8 +1,8 @@
 version: "3.8"
 
 services:
-  nginx:
-    image: ghcr.io/cssnr/docker-nginx-proxy:latest
+  nagios:
+    image: ghcr.io/hosted-domains/nagios-docker:latest
     environment:
       - SERVICE_NAME=app
       - SERVICE_PORT=80
